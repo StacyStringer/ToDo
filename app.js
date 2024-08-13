@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Load Items from local storage
   let items = JSON.parse(localStorage.getItem('items')) || [];
 
-  //Render Items
+  //Render the Items
   const renderItems = () => { 
     itemList.innerHTML = '';
     items.forEach((item, index) => {
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderItems();
   };
 
-  //Toggle item completion 
+  //Toggle the item completion 
   const toggleItemCompletion = (index) => { 
     items[index].completed = !items[index].completed; 
     updateLocalStorage();
     renderItems();
   };
 
-  //Upate local storage 
+  //Upate the local storage 
   const updateLocalStorage = () => {
     localStorage.setItem('items', JSON.stringify(items));
   };
